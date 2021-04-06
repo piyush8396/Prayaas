@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Prayaas</string>
+
+    <string name="student">Students </string>
+    <string name="volunteer">Volunteers </string>
+    <string name="Book">Books</string>
+    <string name="vision">An initiative towards education </string>
+    <string name="mock">Mock Tests</string>
+    <string name="Achievement">Achievement</string>
+    <string name="Donate">Donate</string>
+</resources>

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "765168825006",
+    "project_id": "prayaas-63846",
+    "storage_bucket": "prayaas-63846.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:765168825006:android:1182aff012077c19dcb33f",
+        "android_client_info": {
+          "package_name": "com.example.prayaas"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "765168825006-jvsv6j5s8ate7t9nb4dpcl8jvqvefs26.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCC9Dv5BMYsLdIAtp4tjkuGjmeWa07wcdY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "765168825006-jvsv6j5s8ate7t9nb4dpcl8jvqvefs26.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
