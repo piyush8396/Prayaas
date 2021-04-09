@@ -16,6 +16,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
@@ -23,6 +24,7 @@ public class SignUpActivity extends AppCompatActivity {
    ActivitySignUpBinding binding;
    String name,email,pass,phone;
    FirebaseAuth auth;
+   FirebaseDatabase database;
    FirebaseFirestore fstore;
 
     @Override
@@ -31,6 +33,7 @@ public class SignUpActivity extends AppCompatActivity {
         binding =ActivitySignUpBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+         database=FirebaseDatabase.getInstance();
         auth=FirebaseAuth.getInstance();
         fstore=FirebaseFirestore.getInstance();
 
@@ -53,6 +56,42 @@ public class SignUpActivity extends AppCompatActivity {
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if(task.isSuccessful())
                             {
+
+
+//                                database.getReference().child("Admin").child(email).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+//                                    @Override
+//                                    public void onComplete(@NonNull Task<DataSnapshot> task) {
+//                                        if(task.isSuccessful())
+//                                        {
+//                                            DataSnapshot documentSnapshot=task.getResult();
+//                                            if(documentSnapshot.exists())
+//                                            {
+//                                                UserAdmin userAdmin=new UserAdmin(name,auth.getCurrentUser().getUid(),email,pass,phone,true);
+//                                                database.getReference().child("UserAdmin").child(email).setValue(userAdmin);
+//
+//
+//                                                Intent intent= new Intent(SignUpActivity.this,AdminProfileActivity.class);
+//                                                intent.putExtra("name",name);
+//                                                intent.putExtra("mail",email);
+//                                                intent.putExtra("pass",pass);
+//                                                startActivity(intent);
+//                                                finish();
+//
+//                                            }
+//                                            else {
+//                                                startActivity(new Intent(SignUpActivity.this,DashActivity.class));
+//                                                finish();
+//                                                User user=new User(name,email,pass,phone);
+//                                                fstore.collection("User").document(email).set(user);
+//
+//                                            }
+//                                        }
+//                                    }
+//                                });
+
+
+
+
                                 fstore.collection("Admin").document(email).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
                                     @Override
                                     public void onComplete(@NonNull Task<DocumentSnapshot> task) {

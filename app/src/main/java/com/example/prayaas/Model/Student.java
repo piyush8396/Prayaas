@@ -4,9 +4,9 @@ import android.net.Uri;
 
 public class Student {
     String name, center, profilepic, phone, address, father_name, mother_name, father_number, teacher;
-    int grade, age;
+    String grade, age;
 
-    public Student(String name, String center, String profilepic, String phone, String address, String father_name, String mother_name, String father_number, String teacher, int grade, int age) {
+    public Student(String name, String center, String profilepic, String phone, String address, String father_name, String mother_name, String father_number, String teacher, String grade, String  age) {
         this.name = name;
         this.center = center;
         this.profilepic = profilepic;
@@ -20,7 +20,7 @@ public class Student {
         this.age = age;
     }
 
-    public Student(String name, String center, int grade,String phone) {
+    public Student(String name, String center, String  grade,String phone) {
         this.name = name;
         this.phone=phone;
         this.center = center;
@@ -102,19 +102,19 @@ public class Student {
         this.teacher = teacher;
     }
 
-    public int getGrade() {
+    public String getGrade() {
         return grade;
     }
 
-    public void setGrade(int grade) {
+    public void setGrade(String grade) {
         this.grade = grade;
     }
 
-    public int getAge() {
+    public String getAge() {
         return age;
     }
 
-    public void setAge(int age) {
+    public void setAge(String age) {
         this.age = age;
     }
 }

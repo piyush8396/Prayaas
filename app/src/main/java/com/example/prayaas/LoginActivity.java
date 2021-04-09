@@ -14,6 +14,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
@@ -22,6 +23,7 @@ public class LoginActivity extends AppCompatActivity {
     FirebaseFirestore fstore;
     FirebaseAuth auth;
     ProgressDialog progressDialog;
+    FirebaseDatabase database;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +33,7 @@ public class LoginActivity extends AppCompatActivity {
 
         //Hooks
         auth = FirebaseAuth.getInstance();
+        database=FirebaseDatabase.getInstance();
         fstore = FirebaseFirestore.getInstance();
         progressDialog = new ProgressDialog(LoginActivity.this);
         progressDialog.setTitle("Sign in");

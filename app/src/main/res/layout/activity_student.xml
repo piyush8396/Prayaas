@@ -18,11 +18,12 @@
             android:text="520 \n Students"
             android:textSize="30dp"
             android:gravity="center"
+            android:id="@+id/total_count"
             android:textStyle="bold"
             android:textColor="#ffffff"
             android:layout_gravity="center"
             android:layout_marginTop="30dp"
-            />
+            tools:ignore="InvalidId" />
 
     </LinearLayout>
 
@@ -34,7 +35,6 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/student_recycler_view"
         android:layout_width="match_parent"
-
         android:layout_height="match_parent"
 
 

@@ -8,4 +8,8 @@
     <string name="mock">Mock Tests</string>
     <string name="Achievement">Achievement</string>
     <string name="Donate">Donate</string>
+    <string name="Enter_name">Enter Full Name <font color='#FF0000'>*</font></string>
+    <string name="Enter_class">Enter Class <font color='#FF0000'>*</font></string>
+    <string name="Enter_number">Enter Number <font color='#FF0000'>* </font></string>
+    <string name="center">Center <font color='#FF0000'>*</font></string>
 </resources>

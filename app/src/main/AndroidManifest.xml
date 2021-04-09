@@ -14,8 +14,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Prayaas">
-        <activity android:name=".AddStudentActivity"></activity>
-        <activity android:name=".StudentActivity" />
+        <activity android:name=".AddStudentActivity">
+
+
+        </activity>
+        <activity android:name=".StudentActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".ClassActivity" />
         <activity
             android:name=".AdminProfileActivity"
@@ -23,11 +32,7 @@
         <activity android:name=".SignUpActivity" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".DashActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".SplashActivity"
