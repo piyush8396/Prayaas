@@ -12,6 +12,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.prayaas.BookActivity;
 import com.example.prayaas.Model.Classs;
 import com.example.prayaas.R;
 import com.example.prayaas.StudentActivity;
@@ -24,10 +25,12 @@ public class classAdapter extends RecyclerView.Adapter<classAdapter.ViewHolder>{
 
     ArrayList<Classs> list;
     Context context;
+    Boolean tr;
 
-    public classAdapter(@NonNull ArrayList<Classs> list, Context context) {
+    public classAdapter(@NonNull ArrayList<Classs> list, Context context,Boolean tr) {
         this.list = list;
         this.context = context;
+        this.tr=tr;
     }
 
     @Override
@@ -44,7 +47,12 @@ public class classAdapter extends RecyclerView.Adapter<classAdapter.ViewHolder>{
             @Override
             public void onClick(View view) {
                 int cc=users.getNo();
-                Intent intent=new Intent(context, StudentActivity.class);
+                Intent intent;
+                if(tr) {
+                     intent=new Intent(context, StudentActivity.class);
+                } else {
+                     intent=new Intent(context, BookActivity.class);
+                }
                 intent.putExtra("class",cc);
                 context.startActivity(intent);
             }

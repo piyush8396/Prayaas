@@ -1,7 +1,9 @@
 package com.example.prayaas;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
 
@@ -20,15 +22,13 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends Activity {
 
     private ViewPager mviewpager;
     private LinearLayout mlinearlayout;
     private slider_adapter mslideadpter;
     private TextView dots[]= new TextView[3];;
-    private Button prevbutton;
-
-    private Button nextbutton;
+    private TextView nextbutton;
     private int currentPage;
 
     @Override
@@ -37,8 +37,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         mviewpager =(ViewPager)findViewById(R.id.slideViewpager);
         mlinearlayout=(LinearLayout)findViewById(R.id.dots);
-        prevbutton=(Button)findViewById(R.id.prev);
-        nextbutton=(Button)findViewById(R.id.next);
+
+
+        nextbutton=(TextView) findViewById(R.id.next);
         mslideadpter =new slider_adapter(this);
         mviewpager.setAdapter(mslideadpter);
         addDotIndicator(0);
@@ -46,20 +47,12 @@ public class MainActivity extends AppCompatActivity {
         nextbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(currentPage==2)
-                {
+
                     startActivity(new Intent(MainActivity.this,LoginActivity.class));
                     finish();
-                }
-                mviewpager.setCurrentItem(currentPage+1);
             }
         });
-        prevbutton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                mviewpager.setCurrentItem(currentPage-1);
-            }
-        });
+
     }
 
     public void addDotIndicator(int position){
@@ -69,10 +62,11 @@ public class MainActivity extends AppCompatActivity {
             dots[i]=new TextView(this);
             dots[i].setText(Html.fromHtml("&#8226;"));
             dots[i].setTextSize(35);
-            dots[i].setTextColor(getResources().getColor(R.color.black));
+            dots[i].setTextColor(getResources().getColor(R.color.grey_white));
             mlinearlayout.addView(dots[i]);
 
         }
+        dots[0].setTextColor(getResources().getColor(R.color.blue_t));
 
 
 
@@ -87,36 +81,27 @@ public class MainActivity extends AppCompatActivity {
         public void onPageSelected(int position) {
             if(dots.length>0)
             {
-                dots[position].setTextColor(getResources().getColor(R.color.white));
+                dots[position].setTextColor(getResources().getColor(R.color.blue_t));
             }
             currentPage=position;
             if(position==0)
-            {
-                prevbutton.setEnabled(false);
-                nextbutton.setEnabled(true);
-                prevbutton.setVisibility(View.INVISIBLE);
-                nextbutton.setText("NEXT");
-                prevbutton.setText("");
-                dots[position+1].setTextColor(getResources().getColor(R.color.black));
+            {  nextbutton.setText("Skip>>");
+
+
+                dots[position+1].setTextColor(getResources().getColor(R.color.grey_white));
             }
             else if(position==dots.length-1)
-            {
-                prevbutton.setEnabled(true);
-                nextbutton.setEnabled(true);
-                prevbutton.setVisibility(View.VISIBLE);
-                nextbutton.setText("FINISH");
-                prevbutton.setText("BACK");
-                dots[position-1].setTextColor(getResources().getColor(R.color.black));
+            {     nextbutton.setText("Go>>");
+
+
+                dots[position-1].setTextColor(getResources().getColor(R.color.grey_white));
             }
             else
-            {
-                prevbutton.setEnabled(true);
-                nextbutton.setEnabled(true);
-                prevbutton.setVisibility(View.VISIBLE);
-                nextbutton.setText("NEXT");
-                prevbutton.setText("BACK");
-                dots[position-1].setTextColor(getResources().getColor(R.color.black));
-                dots[position+1].setTextColor(getResources().getColor(R.color.black));
+            {  nextbutton.setText("Skip>>");
+
+
+                dots[position-1].setTextColor(getResources().getColor(R.color.grey_white));
+                dots[position+1].setTextColor(getResources().getColor(R.color.grey_white));
             }
         }
 

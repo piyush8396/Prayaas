@@ -11,11 +11,13 @@
         android:layout_width="match_parent"
         android:layout_height="120dp"
         android:orientation="vertical"
+        android:id="@+id/linear_upper"
+
         android:background="#4991c2">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="520 \n Students"
+            android:text="-- \n Students"
             android:textSize="30dp"
             android:gravity="center"
             android:id="@+id/total_count"
@@ -29,6 +31,8 @@
 
     <FrameLayout
         android:layout_width="match_parent"
+        android:id="@+id/frame_lower"
+
         android:layout_height="match_parent">
 
 
@@ -44,11 +48,13 @@
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:layout_marginBottom="40dp"
-        android:layout_marginEnd="50dp"
+        android:layout_marginEnd="40dp"
+        android:paddingStart="5dp"
 
         app:fabSize="normal"
         android:layout_gravity="bottom|right"
         app:srcCompat="@drawable/plus" />
     </FrameLayout>
+
 
 </LinearLayout>

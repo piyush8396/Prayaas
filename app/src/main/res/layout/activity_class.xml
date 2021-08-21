@@ -15,8 +15,9 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="520 \n Students"
+            android:text="-- \n"
             android:textSize="30dp"
+            android:id="@+id/total_student"
             android:gravity="center"
             android:textStyle="bold"
             android:textColor="#ffffff"

@@ -12,4 +12,8 @@
     <string name="Enter_class">Enter Class <font color='#FF0000'>*</font></string>
     <string name="Enter_number">Enter Number <font color='#FF0000'>* </font></string>
     <string name="center">Center <font color='#FF0000'>*</font></string>
+    <string name="vpa">itachi00@ybl</string>
+    <string name="payee">Prince Garg</string>
+    <string name="transaction_description">test transaction</string>
+    <string name="amount">1.00</string>
 </resources>

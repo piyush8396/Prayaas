@@ -5,11 +5,38 @@
     android:layout_width="match_parent"
     android:orientation="vertical"
     android:layout_height="match_parent"
+    android:background="#EEF0F1"
     tools:context=".SignUpActivity">
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        />
+        android:layout_height="150dp"
+        android:background="@drawable/round3"
+        android:orientation="vertical"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Start Your Journay here ! "
+            android:textColor="@color/white"
+            android:textSize="25dp"
+            android:layout_gravity="left|center_vertical"
+            android:layout_marginStart="35dp"
+            android:layout_marginTop="50dp"
+            android:fontFamily="@font/poppinssemibold"
+            />
+
+
+    </LinearLayout>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="15dp"
+        android:layout_marginTop="-45dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginStart="15dp"
+
+        >
     <LinearLayout
         android:layout_marginTop="20dp"
         android:layout_width="match_parent"
@@ -19,7 +46,7 @@
         android:orientation="vertical"
         >
         <TextView
-            android:layout_marginTop="20dp"
+
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Sign Up"
@@ -30,6 +57,7 @@
         <com.google.android.material.textfield.TextInputLayout
             android:layout_marginTop="20dp"
             android:layout_width="match_parent"
+
             android:layout_height="wrap_content"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
 
@@ -38,13 +66,14 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/txt_name"
                 android:layout_width="match_parent"
+
                 android:layout_height="wrap_content"
-                android:inputType="textEmailAddress"
+                android:inputType="textAutoComplete"
                 android:hint="Enter Your Name"
                 />
         </com.google.android.material.textfield.TextInputLayout>
         <com.google.android.material.textfield.TextInputLayout
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -60,7 +89,7 @@
                 />
         </com.google.android.material.textfield.TextInputLayout>
         <com.google.android.material.textfield.TextInputLayout
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
 
@@ -72,14 +101,14 @@
                 android:id="@+id/txt_phoneNumber"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textEmailAddress"
+                android:inputType="number"
                 android:hint="Enter Your Number"
                 />
         </com.google.android.material.textfield.TextInputLayout>
 
 
         <com.google.android.material.textfield.TextInputLayout
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -99,29 +128,58 @@
 
                 />
         </com.google.android.material.textfield.TextInputLayout>
-        <com.google.android.material.button.MaterialButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_gravity="center_horizontal"
-            android:id="@+id/btn_signup"
-            android:textSize="20dp"
-            android:textStyle="bold"
-            android:text="Sign Up"
-            />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:layout_marginTop="20dp"
-            android:textSize="15dp"
-            android:id="@+id/btn_signin"
-            android:text="Don't have an account ? Sign Up"
+            android:layout_marginTop="10dp"
+
+            android:paddingEnd="20dp"
+            android:paddingStart="20dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
             android:layout_gravity="center_horizontal"
+            android:id="@+id/btn_signup"
+            android:textSize="20dp"
+            android:textColor="@color/white"
+            android:background="@drawable/button_round"
+            android:textStyle="bold"
+            android:text="Sign Up"
             />
 
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+
+                android:textSize="15dp"
+
+                android:text="Already have an acc ?"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="20dp"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="20dp"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                android:textColor="@color/blue_t"
+                android:id="@+id/btn_signIn"
+                android:text=" Sign In"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="20dp"
+                />
+        </LinearLayout>
 
 
     </LinearLayout>
+    </androidx.cardview.widget.CardView>
 
 </LinearLayout>

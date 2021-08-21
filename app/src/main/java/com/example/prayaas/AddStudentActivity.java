@@ -31,6 +31,8 @@ import com.google.firebase.storage.UploadTask;
 import com.theartofdev.edmodo.cropper.CropImage;
 import com.theartofdev.edmodo.cropper.CropImageView;
 
+import org.jetbrains.annotations.NotNull;
+
 public class AddStudentActivity extends AppCompatActivity {
     ActivityAddStudentBinding binding;
     String name = null, center = null, profilepic = null, phone = null, address = null, father_name = null, mother_name = null, father_number = null, teacher = null, gradee = null;
@@ -69,7 +71,7 @@ public class AddStudentActivity extends AppCompatActivity {
         binding.txtGender.setAdapter(adapter1);
 
 
-        String[] grade_type = new String[]{"Below 1", "1", "2", "3", "4", "5", "6", "7", "8", "9"};
+        String[] grade_type = new String[]{"0", "1", "2", "3", "4", "5", "6", "7", "8", "9"};
         ArrayAdapter<String> adapter2 =
                 new ArrayAdapter<>(
                         this,
@@ -102,15 +104,30 @@ public class AddStudentActivity extends AppCompatActivity {
             } else {
                 final StorageReference reference = storage.getReference().child("profile pictures")
                         .child("studentPhoto").child(phone);
+                   if(cropuri!=null) {
+                       reference.putFile(cropuri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                           @Override
+                           public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
 
-                reference.putFile(cropuri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                           }
+                       });
+
+
+                   }
+                Student student = new Student(name, center, profilepic, phone, address, father_name, mother_name, father_number, teacher, (gradee), (age));
+                fstore.collection("Students").document(phone).set(student).addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
-                    public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-
+                    public void onSuccess(Void unused) {
+                        Toast.makeText(AddStudentActivity.this, "Student Added Successfully", Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(AddStudentActivity.this,DashActivity.class));
+                        finish();
+                    }
+                }).addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull @NotNull Exception e) {
+                        Log.d("Onf",e.getMessage());
                     }
                 });
-                Student student = new Student(name, center, profilepic, phone, address, father_name, mother_name, father_number, teacher, (gradee), (age));
-                fstore.collection("Students").document(phone).set(student);
                 Log.d("data","After");
 
             }

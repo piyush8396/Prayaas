@@ -22,9 +22,10 @@ public class slider_adapter extends PagerAdapter {
         this.context=context;
     }
 
-    public int[] slideImage={R.drawable.icon,R.drawable.icon,R.drawable.icon};
-    public String slide_heading[]={"EAT","SLEEP","CODE"};
-    public String slide_des[]={"aaaaaaaaaaaaa","bbbbbbbbb","ssssssssss"};
+    public int[] slideImage={R.drawable.slider1,R.drawable.slider2,R.drawable.slider3};
+    public String slide_heading[]={"Vision","Mission","Achievements"};
+    public String slide_des[]={"Our Vision is give wing to children to break the chain of poverty ","To educate the children of labourers and those socially deprived; who are devoid of education. ","PRAYAAS now have three teaching centers: NITJ, Maqsudan and Amanatpur " +
+            "Selection of students in Jawahar Navodaya Vidyalaya."};
     @Override
     public int getCount() {
         return slide_heading.length;

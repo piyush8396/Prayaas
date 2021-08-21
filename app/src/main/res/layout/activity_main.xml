@@ -4,18 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:backgroundTint="@color/white"
     tools:context=".MainActivity">
 
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/slideViewpager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:backgroundTint="@color/white"
 
         >
 
 
     </androidx.viewpager.widget.ViewPager>
-
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -26,29 +27,26 @@
         android:layout_marginBottom="50dp">
 
     </LinearLayout>
-    <Button
-        android:layout_width="100dp"
-        android:layout_height="60dp"
-        android:textSize="22sp"
-        android:layout_alignParentBottom="true"
-        android:text="BACK"
-        android:textColor="@color/white"
-        android:visibility="invisible"
-        android:id="@+id/prev"
+        <TextView
+            android:id="@+id/next"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_gravity="right|bottom"
+            android:gravity="center"
+            android:layout_marginEnd="20dp"
+            android:scaleType="fitEnd"
+            android:text="Skip>>"
+              android:fontFamily="@font/poppinsextralight"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:textSize="22sp"
+            android:visibility="visible"
 
-        />
-    <Button
-        android:layout_width="100dp"
-        android:layout_height="60dp"
-        android:textSize="22sp"
-        android:textColor="@color/white"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:text="NEXT"
-        android:visibility="visible"
-        android:id="@+id/next"
-
-        />
-    .
+            />
 
 </RelativeLayout>
+
+
+
+
+

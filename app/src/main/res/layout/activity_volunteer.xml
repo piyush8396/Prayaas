@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#f5f5f5"
+    tools:context=".VolunteerActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:orientation="vertical"
+        android:id="@+id/linear_upper"
+
+        android:background="#4991c2">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="-- \n Volunteers"
+            android:textSize="30dp"
+            android:gravity="center"
+            android:id="@+id/total_count"
+            android:textStyle="bold"
+            android:textColor="#ffffff"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            tools:ignore="InvalidId" />
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:id="@+id/frame_lower"
+
+        android:layout_height="match_parent">
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/volunteer_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+
+            />
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/add_student_fab"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginBottom="40dp"
+            android:layout_marginEnd="40dp"
+            android:paddingStart="5dp"
+
+            app:fabSize="normal"
+            android:layout_gravity="bottom|right"
+            app:srcCompat="@drawable/plus" />
+    </FrameLayout>
+
+
+</LinearLayout>

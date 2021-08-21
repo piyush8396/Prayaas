@@ -14,30 +14,31 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Prayaas">
-        <activity android:name=".AddStudentActivity">
-
-
-        </activity>
-        <activity android:name=".StudentActivity" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".ShowStudentActivity"></activity>
+        <activity android:name=".DonateActivity" />
+        <activity android:name=".BookActivity" />
+        <activity android:name=".VolunteerActivity" />
+        <activity android:name=".AddStudentActivity" />
+        <activity android:name=".StudentActivity" />
         <activity android:name=".ClassActivity" />
         <activity
             android:name=".AdminProfileActivity"
             android:windowSoftInputMode="adjustPan" />
         <activity android:name=".SignUpActivity" />
         <activity android:name=".LoginActivity" />
-        <activity android:name=".DashActivity">
-
-        </activity>
+        <activity android:name=".DashActivity" />
         <activity
             android:name=".SplashActivity"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-        <activity android:name=".MainActivity"></activity>
+        <activity
+            android:name=".MainActivity"
+            android:theme="@style/NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
             android:theme="@style/Theme.AppCompat.Light.DarkActionBar" />

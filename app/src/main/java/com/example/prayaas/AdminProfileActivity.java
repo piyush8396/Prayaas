@@ -155,20 +155,6 @@ public class AdminProfileActivity extends AppCompatActivity {
                 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
             }
         }
       if(requestCode==CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE)
@@ -181,17 +167,12 @@ public class AdminProfileActivity extends AppCompatActivity {
 
 
 
-              final StorageReference reference = storage.getReference().child("profile pictures")
+              final StorageReference reference = storage.getReference().child("profile pictures").child("volunteerPhoto")
                       .child(auth.getUid());
               reference.putFile(result.getUri()).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                   @Override
                   public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                      reference.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-                          @Override
-                          public void onSuccess(Uri uri) {
-                              profilepic=uri.toString();
-                          }
-                      });
+                      Toast.makeText(AdminProfileActivity.this, "Uploaded Successfully ", Toast.LENGTH_SHORT).show();
 
 
                   }
